@@ -333,6 +333,13 @@
             const points = parseInt(resolution.value);
             const step = maxTheta / points;
             
+            console.log('Spiral parameters:', {
+                constant: a,
+                maxTheta: maxTheta,
+                points: points,
+                step: step
+            });
+            
             const spiralPoints = [];
             
             for (let i = 0; i <= points; i++) {
@@ -342,6 +349,10 @@
                 const y = r * Math.sin(theta);
                 spiralPoints.push({ x, y, theta, r });
             }
+            
+            // Log first and last points to verify calculation
+            console.log('First point:', spiralPoints[0]);
+            console.log('Last point:', spiralPoints[spiralPoints.length - 1]);
             
             return spiralPoints;
         }
@@ -364,10 +375,18 @@
             const centerX = size / 2;
             const centerY = size / 2;
             
+            console.log('Drawing parameters:', {
+                canvasSize: size,
+                maxR: maxR,
+                scale: scale,
+                centerX: centerX,
+                centerY: centerY
+            });
+            
             // Draw spiral
             ctx.beginPath();
             ctx.strokeStyle = strokeColor.value;
-            ctx.lineWidth = parseInt(strokeWidth.value);  // Changed from parseFloat to parseInt since we're using whole numbers
+            ctx.lineWidth = parseInt(strokeWidth.value);
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
             
