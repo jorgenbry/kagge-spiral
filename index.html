@@ -360,14 +360,14 @@
             
             // Calculate scaling
             const maxR = Math.max(...currentSpiralPoints.map(p => Math.sqrt(p.x * p.x + p.y * p.y)));
-            const scale = (size * 0.4) / maxR;
+            const scale = (size * 0.4) / maxR;  // Adjust scale to ensure spiral fits in canvas
             const centerX = size / 2;
             const centerY = size / 2;
             
             // Draw spiral
             ctx.beginPath();
             ctx.strokeStyle = strokeColor.value;
-            ctx.lineWidth = parseFloat(strokeWidth.value);
+            ctx.lineWidth = parseInt(strokeWidth.value);  // Changed from parseFloat to parseInt since we're using whole numbers
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
             
@@ -417,7 +417,7 @@
     <path d="${pathData}" 
           fill="none" 
           stroke="${strokeColor.value}" 
-          stroke-width="${strokeWidth.value}" 
+          stroke-width="${parseInt(strokeWidth.value)}" 
           stroke-linecap="round" 
           stroke-linejoin="round"/>
 </svg>`;
