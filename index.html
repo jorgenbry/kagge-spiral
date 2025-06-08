@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archimedean Spiral Generator</title>
+    <title>Arkimedisk spiralgenerator</title>
     <style>
         @font-face {
             font-family: 'STK Bureau Sans Medium';
@@ -224,8 +224,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Archimedean Spiral Generator</h1>
-        <div class="subtitle">A mathematical tool for creating perfect vector spirals</div>
+        <h1>Arkimedisk spiralgenerator</h1>
+        <div class="subtitle">Et matematisk verktøy for å lage perfekte vektorspiraler</div>
         
         <div class="formula">
             r = a × θ
@@ -233,38 +233,38 @@
         
         <div class="controls">
             <div class="control-group">
-                <label for="spiralConstant">Spiral Constant (a)</label>
+                <label for="spiralConstant">Spiralkonstant (a)</label>
                 <input type="range" id="spiralConstant" min="0.1" max="5" step="0.1" value="1">
-                <div class="value-display">Value: <span id="spiralConstantValue">1</span></div>
+                <div class="value-display">Verdi: <span id="spiralConstantValue">1</span></div>
             </div>
             
             <div class="control-group">
-                <label for="maxAngle">Maximum Angle (θ in radians)</label>
+                <label for="maxAngle">Maksimal vinkel (θ i radianer)</label>
                 <input type="range" id="maxAngle" min="6.28" max="50.27" step="0.1" value="25.13">
-                <div class="value-display">Value: <span id="maxAngleValue">25.13</span> (~<span id="maxAngleTurns">4</span> turns)</div>
+                <div class="value-display">Verdi: <span id="maxAngleValue">25.13</span> (~<span id="maxAngleTurns">4</span> omdreininger)</div>
             </div>
             
             <div class="control-group">
-                <label for="strokeWidth">Stroke Width</label>
+                <label for="strokeWidth">Linjetykkelse</label>
                 <input type="range" id="strokeWidth" min="0.5" max="5" step="0.1" value="2">
-                <div class="value-display">Value: <span id="strokeWidthValue">2</span>px</div>
+                <div class="value-display">Verdi: <span id="strokeWidthValue">2</span>px</div>
             </div>
             
             <div class="control-group">
-                <label for="strokeColor">Stroke Color</label>
+                <label for="strokeColor">Linjefarge</label>
                 <input type="color" id="strokeColor" value="#333333">
             </div>
             
             <div class="control-group">
-                <label for="canvasSize">Canvas Size</label>
+                <label for="canvasSize">Lerretstørrelse</label>
                 <input type="range" id="canvasSize" min="300" max="800" step="50" value="500">
-                <div class="value-display">Value: <span id="canvasSizeValue">500</span>px</div>
+                <div class="value-display">Verdi: <span id="canvasSizeValue">500</span>px</div>
             </div>
             
             <div class="control-group">
-                <label for="resolution">Resolution (points per turn)</label>
+                <label for="resolution">Oppløsning (punkter per omdreining)</label>
                 <input type="range" id="resolution" min="50" max="500" step="10" value="200">
-                <div class="value-display">Value: <span id="resolutionValue">200</span></div>
+                <div class="value-display">Verdi: <span id="resolutionValue">200</span></div>
             </div>
         </div>
         
@@ -273,23 +273,23 @@
         </div>
         
         <div class="export-section">
-            <h3 style="font-size: 24px; font-weight: 500; margin-bottom: 24px; color: #000000;">Export Options</h3>
+            <h3 style="font-size: 24px; font-weight: 500; margin-bottom: 24px; color: #000000;">Eksportalternativer</h3>
             <div class="export-buttons">
-                <button onclick="downloadSVG()">Download SVG</button>
-                <button onclick="downloadPNG()">Download PNG</button>
-                <button onclick="copyToClipboard()">Copy SVG Code</button>
-                <button onclick="showIllustratorInstructions()">Illustrator Instructions</button>
+                <button onclick="downloadSVG()">Last ned SVG</button>
+                <button onclick="downloadPNG()">Last ned PNG</button>
+                <button onclick="copyToClipboard()">Kopier SVG-kode</button>
+                <button onclick="showIllustratorInstructions()">Illustrator-instruksjoner</button>
             </div>
             
             <div class="info">
-                <h4>About Archimedean Spirals</h4>
-                <p><strong>Mathematical Definition:</strong> An Archimedean spiral is defined by the equation r = a × θ, where:</p>
+                <h4>Om arkimediske spiraler</h4>
+                <p><strong>Matematisk definisjon:</strong> En arkimedisk spiral er definert av ligningen r = a × θ, hvor:</p>
                 <ul>
-                    <li><strong>r</strong> = distance from center (radius)</li>
-                    <li><strong>a</strong> = spiral constant (controls spacing between turns)</li>
-                    <li><strong>θ</strong> = angle in radians</li>
+                    <li><strong>r</strong> = avstand fra sentrum (radius)</li>
+                    <li><strong>a</strong> = konstant (kontrollerer avstanden mellom omdreininger)</li>
+                    <li><strong>θ</strong> = vinkel i radianer</li>
                 </ul>
-                <p>This creates a spiral where the distance between successive turns remains constant, making it perfect for technical drawings, logos, and artistic designs.</p>
+                <p>Dette skaper en spiral hvor avstanden mellom påfølgende omdreininger forblir konstant, noe som gjør den perfekt for tekniske tegninger, logoer og kunstneriske design.</p>
             </div>
         </div>
     </div>
@@ -444,33 +444,33 @@
         function copyToClipboard() {
             const svgContent = generateSVG();
             navigator.clipboard.writeText(svgContent).then(() => {
-                alert('SVG code copied to clipboard! You can paste this directly into a text editor or import into design software.');
+                alert('SVG-kode kopiert til utklippstavlen! Du kan lime dette direkte inn i en teksteditor eller importere til designprogramvare.');
             });
         }
         
         function showIllustratorInstructions() {
-            alert(`To use in Adobe Illustrator:
+            alert(`For å bruke i Adobe Illustrator:
 
-1. METHOD 1 - Direct Import:
-   • Click "Download SVG" and save the file
-   • In Illustrator: File → Open or File → Place
-   • Select the SVG file
+1. METODE 1 - Direkte import:
+   • Klikk "Last ned SVG" og lagre filen
+   • I Illustrator: Fil → Åpne eller Fil → Plasser
+   • Velg SVG-filen
 
-2. METHOD 2 - Copy/Paste:
-   • Click "Copy SVG Code"
-   • Open a text editor, paste the code, save as .svg
-   • Import into Illustrator
+2. METODE 2 - Kopier/Lim inn:
+   • Klikk "Kopier SVG-kode"
+   • Åpne en teksteditor, lim inn koden, lagre som .svg
+   • Importer til Illustrator
 
-3. METHOD 3 - Direct Paste (newer versions):
-   • Click "Copy SVG Code"  
-   • In Illustrator, try Edit → Paste (may work directly)
+3. METODE 3 - Direkte innliming (nyere versjoner):
+   • Klikk "Kopier SVG-kode"
+   • I Illustrator, prøv Rediger → Lim inn (kan fungere direkte)
 
-Once imported, you can:
-• Resize without quality loss
-• Change colors and stroke properties
-• Use the spiral as a path for text
-• Combine with other vector elements
-• Export to any format`);
+Når den er importert, kan du:
+• Endre størrelse uten kvalitetstap
+• Endre farger og linjeegenskaper
+• Bruke spiralen som en sti for tekst
+• Kombinere med andre vektorelementer
+• Eksportere til alle formater`);
         }
         
         // Event listeners
