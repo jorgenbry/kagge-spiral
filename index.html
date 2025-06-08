@@ -474,7 +474,11 @@ Once imported, you can:
         }
         
         // Event listeners
-        spiralConstant.addEventListener('input', () => { updateValueDisplays(); drawSpiral(); });
+        spiralConstant.addEventListener('input', () => { 
+            console.log('Spiral constant changed to:', spiralConstant.value);
+            updateValueDisplays(); 
+            drawSpiral(); 
+        });
         maxAngle.addEventListener('input', () => { updateValueDisplays(); drawSpiral(); });
         strokeWidth.addEventListener('input', () => { updateValueDisplays(); drawSpiral(); });
         strokeColor.addEventListener('input', () => { updateValueDisplays(); drawSpiral(); });
