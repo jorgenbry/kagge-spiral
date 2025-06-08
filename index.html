@@ -371,7 +371,8 @@
             
             // Calculate scaling
             const maxR = Math.max(...currentSpiralPoints.map(p => Math.sqrt(p.x * p.x + p.y * p.y)));
-            const scale = (size * 0.4) / maxR;  // Adjust scale to ensure spiral fits in canvas
+            // Use a fixed scale factor instead of scaling to fit
+            const scale = 5;  // This will make the spiral constant changes more visible
             const centerX = size / 2;
             const centerY = size / 2;
             
@@ -413,7 +414,7 @@
             
             // Calculate scaling
             const maxR = Math.max(...points.map(p => Math.sqrt(p.x * p.x + p.y * p.y)));
-            const scale = (size * 0.4) / maxR;
+            const scale = 5;  // Match the scale used in drawSpiral
             const centerX = size / 2;
             const centerY = size / 2;
             
